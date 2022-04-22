@@ -15,10 +15,10 @@ function addTask() {
     };$.ajax({
         method: 'POST',
         url: '/tasks',
-        data: taskData
+        data: taskWePost
     }).then(function(response) {
         console.log(response);
-        gettasks();
+        //gettasks();
     }).catch(function(error) {
         console.log('error in the task post', error);       
     });

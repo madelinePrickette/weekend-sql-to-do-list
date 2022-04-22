@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'))
 
 
-app.post(function (req, res) {
+app.post('/tasks', (req, res) => {
     console.log('yay');
 })
 
