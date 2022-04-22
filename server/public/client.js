@@ -22,3 +22,4 @@ function addTask() {
     }).catch(function(error) {
         console.log('error in the task post', error);       
     });
+}

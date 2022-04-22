@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pool = require('./modules/pool.js');
+//const pool = require('./modules/pool.js');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -9,9 +9,7 @@ app.use(express.static('server/public'))
 
 
 app.post(function (req, res) {
-    $.ajax{
-
-    }
+    console.log('yay');
 })
 
 
