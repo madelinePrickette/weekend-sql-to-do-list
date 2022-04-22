@@ -7,7 +7,7 @@ function onReady(){
     $('#addTaskButton').on('click', addTask);
 }
 
-function addTask() {
+function addTask() { // POST
     // Get info to send to the server
     const taskWePost = {
         task: $('#createATask').val(), 
@@ -18,8 +18,19 @@ function addTask() {
         data: taskWePost
     }).then(function(response) {
         console.log(response);
-        //gettasks();
     }).catch(function(error) {
         console.log('error in the task post', error);       
+    });
+    refreshTasks();
+}
+
+function refreshTasks() {
+    $.ajax({
+        type: 'GET',
+        url: '/tasks'
+    }).then(function(response) {
+        console.log(response);
+    }).catch(function(error){
+        console.log('error in client', error);
     });
 }
