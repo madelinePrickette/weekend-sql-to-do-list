@@ -11,6 +11,7 @@ function onReady(){
     $('#viewList').on('click', '.deleteButton', deleteTask);
     // so the '#viewList is the location in which the deletion and button population will occour. The .deleteButton is seen 
     // /identified wihtin the parenthesis.
+    $('#viewList').on('click', '.completeButton', completeStatus);
 }
 
 function addTask() { // POST
@@ -29,6 +30,7 @@ function addTask() { // POST
         console.log('error in the task post', error);       
     });
     refreshTasks();
+    $('#createATask').val(''); // Cleared tasks input
 }; // End addTask SUCCESSFULLY WORKS!!!!!!!!!!!
 
 function refreshTasks() {
@@ -68,3 +70,25 @@ function deleteTask() {
         console.log('there was an error when attempting to delete a task', error)
     })
 };
+
+function completeStatus(){
+    // Targeting the id with the task we clicked the button on.
+    const id = $(this).data('id');
+    // Below we see this in the DOM console.log with the id of the task we clicked next to it.
+    console.log('the toggle complete status button is working properly.', id);
+    const toggleComplete =  $(this).data( 'complete?' ); //currently false
+    console.log('lets see if we get a console.log back...', id, toggleComplete);
+    // Time to ajax...
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${id}`,
+        data: { completeStatus: !toggleComplete }
+    }).then( function(response){
+        if()
+        console.log('the server understands that the complete button has been pressed', response);
+        refreshTasks();
+    }).catch(function (error){
+        console.log('there was a problem while trying to update', error);
+    }) // End of completeStatus successfully updted the status of completion.
+
+}

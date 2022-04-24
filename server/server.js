@@ -61,8 +61,24 @@ app.delete('/tasks/:id',  (req, res) => {
     console.log('there was a problem trying to delete this task from the database', error);
     res.sendStatus(500);
   })
-}); // End delete
+}); // End delete WORKS SUCCESSFULLY!!! SPEAKS TO THE DATABASE!
 
+app.put( '/tasks/:id', (req, res) => {
+  console.log('the server recognizes that the completeStatus function worked when the completeButton was pressed');
+  console.log('/tasks PUT:', req.params.id, req.body); //currently undefined because we have not made a query yet.
+  // Time to make a query:
+  // This target a specific task based on id identification is no longer false when clicked.
+  const query = `UPDATE "tasks" SET "complete"=$1 WHERE "id"=$2;`;
+  // This says body data complete is affected with the paied id. i think...
+  const values = [req.body.complete, req.params.id];
+  // Time to make a query.
+  pool.query(query, values).then((results) => {
+    res.sendStatus(200); //200 means OK
+  }).catch((error) => {
+    console.log('there was a problem updating the complete status of a task in out list', error);
+    res.sendStatus(500);
+  })
+}) // End of put/update SUCCESS
 
 
 
