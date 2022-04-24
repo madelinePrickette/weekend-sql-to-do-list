@@ -44,8 +44,12 @@ function refreshTasks() {
             el.append( `<li>${ response[i].task}
             <button class="completeButton" data-id="${response[i].id}">Complete Task</button>
             <button class="deleteButton" data-id="${response[i].id}">Delete</button>
-            </li>`)
+            </li>`) 
+            //dont know how to space the table :/ 
+            //struggling to figure out how to change color of td or tr
+
         }//end for loop for appending
+
         console.log(response);
     }).catch(function(error){
         console.log('error in client', error);
