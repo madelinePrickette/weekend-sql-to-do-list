@@ -83,10 +83,11 @@ function completeStatus(){
         method: 'PUT',
         url: `/tasks/${id}`,
         data: { completeStatus: !toggleComplete }
-    }).then( function(response){
-        if()
+    }).then( function(response) {
+        for (let i=0; i<response.length; i++){
         console.log('the server understands that the complete button has been pressed', response);
         refreshTasks();
+        }
     }).catch(function (error){
         console.log('there was a problem while trying to update', error);
     }) // End of completeStatus successfully updted the status of completion.
