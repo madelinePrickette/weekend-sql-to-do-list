@@ -1,5 +1,5 @@
 $(onReady);
 
 function onReady() {
-    console.log('ok')
+    console.log('ok');
 }
