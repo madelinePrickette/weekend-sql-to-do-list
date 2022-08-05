@@ -20,7 +20,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] table
 *CLIENT*
     - [x] add task listener
-    - [ ] GET to server
+    - [x] GET to server
     - [ ] append data and status & delete button
     - [ ] POST to server, capture input val
     - [ ] POST calls GET
@@ -30,8 +30,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [ ] PUT to server, targer id
     - [ ] PUT calls GET
 *ROUTE TASKS*
-    - [ ] GET to DB send SELECT query
-    - [ ] send status and results.rows
+    - [x] GET to DB send SELECT query
+    - [x] send status and results.rows
     - [ ] POST to DB
     - [ ] sanitized queryText including queryValues
     - [ ] send query with queryText and queryValues in params
