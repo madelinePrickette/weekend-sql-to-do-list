@@ -9,17 +9,17 @@ Your project description goes here. What problem did you solve? How did you solv
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 *Tasks*
-    - [ ] file setup
-    - [ ] pool and express setup
-    - [ ] db setup and paste
-    - [ ] connect router 
-# HTML
-    - [ ] header
-    - [ ] input
-    - [ ] add button
-    - [ ] table
-# CLIENT
-    - [ ] add task listener
+    - [x] file setup
+    - [x] pool and express setup
+    - [x] db setup and paste
+    - [x] connect router 
+*HTML*
+    - [x] header
+    - [x] input
+    - [x] add button
+    - [x] table
+*CLIENT*
+    - [x] add task listener
     - [ ] GET to server
     - [ ] append data and status & delete button
     - [ ] POST to server, capture input val
@@ -29,7 +29,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [ ] DELETE calls GET
     - [ ] PUT to server, targer id
     - [ ] PUT calls GET
-# ROUTE TASKS
+*ROUTE TASKS*
     - [ ] GET to DB send SELECT query
     - [ ] send status and results.rows
     - [ ] POST to DB

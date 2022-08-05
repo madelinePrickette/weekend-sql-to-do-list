@@ -11,6 +11,9 @@ const pool = new Pool({
     idleTimeoutMillis: 30000
 });
 
+tasksRouter.get('/', (req, res) => {
+    console.log('in GET route...')
+})
 
 
-module.exports = router;
+module.exports = tasksRouter;
