@@ -36,4 +36,23 @@ function renderTasks(response) {
     </tr>
     `)
     }
+};
+
+function addTask() {
+    console.log('in /POST...');
+    let taskOjb = {
+        task: $('#taskIn').val()
+    };
+    console.log(taskOjb);
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: taskOjb
+    }).then( function(response) {
+        console.log(response);
+        getTasks(response);
+    }).catch( function (err) {
+        console.log(err);
+        alert('Error in POST');
+    });
 }

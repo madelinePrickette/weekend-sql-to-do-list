@@ -21,7 +21,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 *CLIENT*
     - [x] add task listener
     - [x] GET to server
-    - [ ] append data and status & delete button
+    - [x] append data and status & delete button
     - [ ] POST to server, capture input val
     - [ ] POST calls GET
     - [ ] dynamic delete & status listener
