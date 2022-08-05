@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const tasksRouter = express.Router();
 const pg = require('pg');
 const Pool = pg.Pool;
 
@@ -12,8 +12,20 @@ const pool = new Pool({
 });
 
 tasksRouter.get('/', (req, res) => {
-    console.log('in GET route...')
-})
+    console.log('in GET route...');
+    let queryText = 
+    `
+    SELECT * FROM "tasks";
+    `
+    pool.query(queryText)
+        .then(results => {
+            console.log(results);
+            res.send(results.rows)
+        }).catch( err => {
+            console.log('error in GET', err);
+            res.sendStatus(500);
+        });
+});
 
 
 module.exports = tasksRouter;
