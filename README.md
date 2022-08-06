@@ -25,8 +25,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] POST to server, capture input val
     - [x] POST calls GET
     - [x] dynamic delete & status listener
-    - [ ] DELETE to server, target id
-    - [ ] DELETE calls GET
+    - [x] DELETE to server, target id
+    - [x] DELETE calls GET
     - [ ] PUT to server, targer id
     - [ ] PUT calls GET
 *ROUTE TASKS*
@@ -36,11 +36,11 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] sanitized queryText including queryValues
     - [x] send query with queryText and queryValues in params
     - [x] send status
-    - [ ] DELETE to DB with /:id targeted
-    - [ ] id req.params.id
-    - [ ] sanitized queryText including id
-    - [ ] send query with queryText and id in params
-    - [ ] send status
+    - [x] DELETE to DB with /:id targeted
+    - [x] id req.params.id
+    - [x] sanitized queryText including id
+    - [x] send query with queryText and id in params
+    - [x] send status
     - [ ] PUT to DB with /:id targeted
     - [ ] id req.params.id
     - [ ] sanitized queryText including id
