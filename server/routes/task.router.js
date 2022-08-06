@@ -27,5 +27,24 @@ tasksRouter.get('/', (req, res) => {
         });
 });
 
+tasksRouter.post('/', (req, res) => {
+    console.log('in POST route...');
+    let queryText = 
+    `
+    INSERT INTO "tasks" ("task")
+    VALUES ($1);
+    `
+    let queryValues = [
+        req.body.task,
+    ];
+    console.log(req.body); //shows in vs code terminal
+    pool.query(queryText, queryValues)
+        .then( (result) => {
+            res.sendStatus(200);
+        }).catch( (err) => {
+            console.log('Error in POST...', err);
+            res.sendStatus(500);
+        });
+});
 
 module.exports = tasksRouter;

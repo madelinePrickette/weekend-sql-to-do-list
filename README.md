@@ -22,9 +22,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] add task listener
     - [x] GET to server
     - [x] append data and status & delete button
-    - [ ] POST to server, capture input val
-    - [ ] POST calls GET
-    - [ ] dynamic delete & status listener
+    - [x] POST to server, capture input val
+    - [x] POST calls GET
+    - [x] dynamic delete & status listener
     - [ ] DELETE to server, target id
     - [ ] DELETE calls GET
     - [ ] PUT to server, targer id
@@ -32,10 +32,10 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 *ROUTE TASKS*
     - [x] GET to DB send SELECT query
     - [x] send status and results.rows
-    - [ ] POST to DB
-    - [ ] sanitized queryText including queryValues
-    - [ ] send query with queryText and queryValues in params
-    - [ ] send status
+    - [x] POST to DB
+    - [x] sanitized queryText including queryValues
+    - [x] send query with queryText and queryValues in params
+    - [x] send status
     - [ ] DELETE to DB with /:id targeted
     - [ ] id req.params.id
     - [ ] sanitized queryText including id

@@ -7,7 +7,8 @@ function onReady() {
 
 function handleClicks() {
     $('#addTask').on('click', addTask);
-
+    //DYNAMIC LISTENER
+    $('#tableBody').on('click', '.deleteButton', handleDelete)
 }
 
 function getTasks() {
@@ -29,9 +30,10 @@ function renderTasks(response) {
     $('#tableBody').empty();
     for(task of response){
     $('#tableBody').append(`
-    <tr>
+    <tr data-id=${task.id} data-status=${task.status}>
         <td>${task.task}</td>
         <td>${task.status}</td>
+        <td><button class="completeButton">Complete</button></td>
         <td><button class="deleteButton">Delete</button></td>
     </tr>
     `)
@@ -55,4 +57,5 @@ function addTask() {
         console.log(err);
         alert('Error in POST');
     });
+    $('#taskIn').val('');
 }
