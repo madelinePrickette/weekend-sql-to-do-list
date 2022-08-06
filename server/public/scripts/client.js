@@ -9,6 +9,7 @@ function handleClicks() {
     $('#addTask').on('click', addTask);
     //DYNAMIC LISTENER
     $('#tableBody').on('click', '.deleteButton', handleDelete)
+    $('#tableBody').on('click', '.completeButton', handleStatus)
 }
 
 function getTasks() {
@@ -73,5 +74,27 @@ function handleDelete() {
     }).catch( function(err) {
         console.log(err);
         alert('Error in /DELETE...');
+    });
+};
+
+function handleStatus() {
+    console.log('in /PUT... clicked complete');
+
+    const id = $(this).closest('tr').data('id');
+    console.log(id);
+
+    const status = $(this).closest('tr').data('status');
+    console.log(status);
+
+    $.ajax({
+        method: "DELETE",
+        url: "/tasks",
+        data: status
+    }).then(function (response) {
+        console.log(response);
+        getTasks(response);
+    }).catch(function (err) {
+        console.log(err);
+        alert('Error in PUT...');
     });
 }
