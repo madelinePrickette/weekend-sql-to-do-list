@@ -27,8 +27,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] dynamic delete & status listener
     - [x] DELETE to server, target id
     - [x] DELETE calls GET
-    - [ ] PUT to server, targer id
-    - [ ] PUT calls GET
+    - [x] PUT to server, targer id
+    - [x] PUT calls GET
 *ROUTE TASKS*
     - [x] GET to DB send SELECT query
     - [x] send status and results.rows
@@ -41,9 +41,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] sanitized queryText including id
     - [x] send query with queryText and id in params
     - [x] send status
-    - [ ] PUT to DB with /:id targeted
-    - [ ] id req.params.id
-    - [ ] sanitized queryText including id
-    - [ ] send query with queryText and id in params
-    - [ ] send status
+    - [x] PUT to DB with /:id targeted
+    - [x] id req.params.id
+    - [x] sanitized queryText including id
+    - [x] send query with queryText and id in params
+    - [x] send status
     
