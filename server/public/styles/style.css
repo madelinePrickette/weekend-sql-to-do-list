@@ -6,3 +6,7 @@ table, th, tr, td{
     border: solid 2px black;
     border-collapse: collapse;
 }
+
+.green {
+    background-color: darkolivegreen;
+}

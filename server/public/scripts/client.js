@@ -30,14 +30,25 @@ function renderTasks(response) {
     console.log('rendering tasks...');
     $('#tableBody').empty();
     for(task of response){
-    $('#tableBody').append(`
-    <tr data-id=${task.id} data-status=${task.status}>
-        <td>${task.task}</td>
-        <td>${task.status}</td>
-        <td><button class="completeButton">Complete</button></td>
-        <td><button class="deleteButton">Delete</button></td>
-    </tr>
-    `)
+        if (task.status === false){
+        $('#tableBody').append(`
+        <tr data-id=${task.id} data-status=${task.status}>
+            <td>${task.task}</td>
+            <td>${task.status}</td>
+            <td><button class="completeButton">Complete</button></td>
+            <td><button class="deleteButton">Delete</button></td>
+        </tr>
+        `)
+        } else {
+            $('#tableBody').append(`
+        <tr data-id=${task.id} data-status=${task.status} class="green">
+            <td>${task.task}</td>
+            <td>${task.status}</td>
+            <td><button class="completeButton">Complete</button></td>
+            <td><button class="deleteButton">Delete</button></td>
+        </tr>
+        `)
+        }
     }
 };
 
@@ -97,4 +108,5 @@ function handleStatus() {
         console.log(err);
         alert('Error in PUT...');
     });
+    
 }
