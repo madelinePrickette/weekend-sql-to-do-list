@@ -34,18 +34,16 @@ function renderTasks(response) {
         $('#tableBody').append(`
         <tr data-id=${task.id} data-status=${task.status}>
             <td>${task.task}</td>
-            <td>${task.status}</td>
-            <td><button class="completeButton">Complete</button></td>
-            <td><button class="deleteButton">Delete</button></td>
+            <td><button class="completeButton btn btn-success">Complete</button></td>
+            <td><button class="deleteButton btn btn-danger">Delete</button></td>
         </tr>
         `)
         } else {
             $('#tableBody').append(`
         <tr data-id=${task.id} data-status=${task.status} class="green">
             <td>${task.task}</td>
-            <td>${task.status}</td>
-            <td><button class="completeButton">Complete</button></td>
-            <td><button class="deleteButton">Delete</button></td>
+            <td><button class="completeButton btn btn-success">Completed</button></td>
+            <td><button class="deleteButton btn btn-danger">Delete</button></td>
         </tr>
         `)
         }

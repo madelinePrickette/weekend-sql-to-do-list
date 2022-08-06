@@ -2,11 +2,29 @@ body {
     background-color:azure;
 }
 
-table, th, tr, td{
-    border: solid 2px black;
-    border-collapse: collapse;
+.green {
+    background-color: #8bc34a;
 }
 
-.green {
-    background-color: darkolivegreen;
+.thin-font {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+}
+
+.medium-font {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 25px;
+}
+
+.large-font {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 40px;
+}
+
+.left-paddding {
+    padding-left: 30px;
+}
+
+.left-margin {
+    margin-left: 25px;
 }
