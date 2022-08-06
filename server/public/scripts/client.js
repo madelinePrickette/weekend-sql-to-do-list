@@ -59,3 +59,19 @@ function addTask() {
     });
     $('#taskIn').val('');
 }
+
+function handleDelete() {
+    console.log('clicked delete');
+    const id = $(this).closest('tr').data('id');
+    console.log(id); //check
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${id}`
+    }).then( function(response) {
+        console.log(response);
+        getTasks(response);
+    }).catch( function(err) {
+        console.log(err);
+        alert('Error in /DELETE...');
+    });
+}
