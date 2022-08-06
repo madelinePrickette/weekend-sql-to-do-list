@@ -66,5 +66,25 @@ tasksRouter.delete('/:id', (req, res) => {
         });
 });
 
+tasksRouter.put('/:id', (req, res) => {
+    const id = req.params.id
+    console.log(id);
+
+    let queryText = 
+    `
+    UPDATE "tasks"
+    SET "status" = true
+    WHERE "id" = $1;
+    `;
+    pool.query(queryText, [id])
+        .then( (result) => {
+            console.log(result);
+            res.sendStatus(200);
+        }).catch( (err) => {
+            console.log(err);
+            res.sendStatus(500);
+        });
+});
+
 
 module.exports = tasksRouter;

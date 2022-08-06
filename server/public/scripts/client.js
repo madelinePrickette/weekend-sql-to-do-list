@@ -87,8 +87,8 @@ function handleStatus() {
     console.log(status);
 
     $.ajax({
-        method: "DELETE",
-        url: "/tasks",
+        method: 'PUT',
+        url: `/tasks/${id}`,
         data: status
     }).then(function (response) {
         console.log(response);
