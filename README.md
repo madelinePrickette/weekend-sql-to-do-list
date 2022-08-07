@@ -46,4 +46,16 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - [x] sanitized queryText including id
     - [x] send query with queryText and id in params
     - [x] send status
-    
+
+*EXTRA STUFF I FORCE MYSELF TO WORK ON LOLLLLLLLL*
+    - [x] bootstrap table
+    - [x] bootstrap table grey selection on hovered row
+    - [x] bootstrap buttons on table with colors
+    - [x] bootstrap input field
+    - [x] google fonts
+    - [x] order by so incomplete tasks go at top
+    - [x] complete button changes to completed when complete
+    - [x] completed button makes task incomplete and pushes it to the top near other incomplete tasks
+    - [ ] sweetalert delete warning
+# PLEASE CHECK NOTES ON SWEETALERT TROUBLES!
+# I couldn't get it to work... ALMOST THOUGH!

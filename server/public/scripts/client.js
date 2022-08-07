@@ -8,7 +8,10 @@ function onReady() {
 function handleClicks() {
     $('#addTask').on('click', addTask);
     //DYNAMIC LISTENER
-    $('#tableBody').on('click', '.deleteButton', handleDelete)
+    $('#tableBody').on('click', '.deleteButton', handleDelete) 
+    // please look at my sweet alert function. I was gonna call it 
+    // in the on click for delete and have it call the handleDelete
+    // but things didnt work out. Please help!
     $('#tableBody').on('click', '.completeButton', handleStatus)
 }
 
@@ -50,6 +53,8 @@ function renderTasks(response) {
     }
 };
 
+// DOM 100% LOADED //
+
 function addTask() {
     console.log('in /POST...');
     let taskOjb = {
@@ -69,6 +74,26 @@ function addTask() {
     });
     $('#taskIn').val('');
 }
+
+// function sweetAlertDelete() {
+//     swal({
+//         title: "Are you sure?", 
+//         text: "You're about to delete a task! You can't get it back!", 
+//         icon: "warning",
+//         buttons: ["Go back", "I wish to proceed"]
+//         })
+//         .then((value) => {
+//            console.log(value)
+//            handleDelete();
+//         })
+//         // esc button on keyboard, clicking go back, and clicking outside of the modal gives numm value
+//         // clicking proceed gives a true value
+
+//         // If i did this, I dont know how to target the row.
+//         // id comes back with undefined so therefore I cant find a way to
+//         // send the id to pass it to the handleDelete so it can be
+//         // used for the ajax request.
+// }
 
 function handleDelete() {
     console.log('clicked delete');
@@ -95,16 +120,19 @@ function handleStatus() {
     const status = $(this).closest('tr').data('status');
     console.log(status);
 
-    $.ajax({
-        method: 'PUT',
-        url: `/tasks/${id}`,
-        data: status
-    }).then(function (response) {
-        console.log(response);
-        getTasks(response);
-    }).catch(function (err) {
-        console.log(err);
-        alert('Error in PUT...');
-    });
-    
+    let taskStatus = {
+        status: status
+    };
+
+        $.ajax({
+            method: 'PUT',
+            url: `/tasks/${id}`,
+            data: taskStatus
+        }).then(function (response) {
+            console.log(response);
+            getTasks(response);
+        }).catch(function (err) {
+            console.log(err);
+            alert('Error in PUT...');
+        });   
 }

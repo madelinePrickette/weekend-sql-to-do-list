@@ -15,7 +15,8 @@ tasksRouter.get('/', (req, res) => {
     console.log('in GET route...');
     let queryText = 
     `
-    SELECT * FROM "tasks";
+    SELECT * FROM "tasks"
+    ORDER BY "status" ;
     `
     pool.query(queryText)
         .then(results => {
@@ -70,20 +71,46 @@ tasksRouter.put('/:id', (req, res) => {
     const id = req.params.id
     console.log(id);
 
-    let queryText = 
-    `
-    UPDATE "tasks"
-    SET "status" = true
-    WHERE "id" = $1;
-    `;
-    pool.query(queryText, [id])
-        .then( (result) => {
-            console.log(result);
-            res.sendStatus(200);
-        }).catch( (err) => {
-            console.log(err);
-            res.sendStatus(500);
-        });
+    let status = req.body.status
+    console.log(status);
+
+    // ALWAYS REMEMBER AJAX TURNS EVERYTHING TO A STRING  
+    // CUZ I JUST WASTED LIKE AN HOUR TRYING TO FIGURE THIS OUT
+    if(status === 'false'){
+        console.log('first if statement is met');
+        let queryText = 
+        `
+        UPDATE "tasks"
+        SET "status" = TRUE
+        WHERE "id" = $1;
+        `;
+        pool.query(queryText, [id])
+            .then( (result) => {
+                console.log(result);
+                res.sendStatus(200);
+            }).catch( (err) => {
+                console.log(err);
+                res.sendStatus(500);
+            });
+        return;
+    } else {
+        console.log('second if statement is met');
+
+        let queryText = 
+        `
+        UPDATE "tasks"
+        SET "status" = FALSE
+        WHERE "id" = $1;
+        `;
+        pool.query(queryText, [id])
+            .then( (result) => {
+                console.log(result);
+                res.sendStatus(200);
+            }).catch( (err) => {
+                console.log(err);
+                res.sendStatus(500);
+            });
+    }
 });
 
 

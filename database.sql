@@ -6,9 +6,13 @@ CREATE TABLE "tasks" (
 
 INSERT INTO "tasks"
 	("task", "status")
-VALUES ('laundry', false),
-('trash', false),
-('pick up', false);
+VALUES ('laundry', FALSE),
+('trash', FALSE),
+('groceries', FALSE),
+('pick up', FALSE),
+('do homework', FALSE),
+('sweep', FALSE),
+('dishes', FALSE);
 
 SELECT * FROM "tasks";
 
@@ -22,5 +26,4 @@ WHERE "id" = 7;
 UPDATE "tasks"
 SET "status" = true
 WHERE "id" = 16;
-
 -- both ids will be sanitized with $1
