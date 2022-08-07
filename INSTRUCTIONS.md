@@ -46,7 +46,7 @@ We would recommend you spend some time thinking about how to approach this probl
 
 - `feature-styling-bootstrap` 
 
-    - [ ]  Add Bootstrap to the front end and style it up!
+    - [✅]  Add Bootstrap to the front end and style it up!
       -  ✅Buttons -- make the creation buttons and completion buttons green and the delete red.
       -  ✅Inputs -- make your text inputs styled in the bootstrap way
       -  ✅Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
